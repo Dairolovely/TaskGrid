@@ -1,4 +1,4 @@
-<?php
+<!-- <?php
 session_start();
 require 'db.php'; // This connects to $conn
 
@@ -11,18 +11,18 @@ $id = $_GET['id'];
 $res = $conn->query("SELECT * FROM tasks WHERE task_id = $id");
 $task = $res->fetch_assoc();
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $title = $_POST['title'];
-    $status = $_POST['status'];
-    // Update Operation
-    $stmt = $conn->prepare("UPDATE tasks SET task_title = ?, status = ? WHERE task_id = ?");
-    $stmt->bind_param("ssi", $title, $status, $id);
-    $stmt->execute();
-    header("Location: dashboard.php");
-    exit();
-}
-?>
-<!DOCTYPE html>
+// if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+//     $title = $_POST['title'];
+//     $status = $_POST['status'];
+//     // Update Operation
+//     $stmt = $conn->prepare("UPDATE tasks SET task_title = ?, status = ? WHERE task_id = ?");
+//     $stmt->bind_param("ssi", $title, $status, $id);
+//     $stmt->execute();
+//     header("Location: dashboard.php");
+//     exit();
+// }
+?> -->
+<!-- <!DOCTYPE html>
 <html>
 <head><link rel="stylesheet" href="style.css"><title>Edit Task</title></head>
 <body class="auth-page">
@@ -39,4 +39,4 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         </form>
     </div>
 </body>
-</html>
+</html> -->
