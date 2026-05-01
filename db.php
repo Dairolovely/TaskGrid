@@ -4,7 +4,7 @@ $user = "root";
 $pass = ""; 
 $db   = "taskgrid";
 
-// Using $conn and MySQLi as requested by your teacher
+Using $conn and MySQLi as requested by your teacher
 $conn = new mysqli($host, $user, $pass, $db);
 
 if ($conn->connect_error) {
