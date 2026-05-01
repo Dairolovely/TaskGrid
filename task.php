@@ -1,82 +1,44 @@
 <?php
-include 'db.php';
+session_start();
+require 'db.php';
 
-if(isset($_POST['add_task'])){
-
-    $task = $_POST['task_title'];
-    $description = $_POST['description'];
-    $due = $_POST['due_date'];
-
-    $sql = "INSERT INTO tasks(task_title, description, due_date)
-            VALUES('$task','$description','$due')";
-
-    mysqli_query($conn, $sql);
+if (isset($_GET['delete'])) {
+    $id = $_GET['delete'];
+    $conn->query("DELETE FROM tasks WHERE task_id = $id");
+    header("Location: dashboard.php");
 }
-?>
 
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $title = $_POST['title'];
+    $desc = $_POST['desc'];
+    $due = $_POST['due'];
+    $uid = $_POST['user_id'];
+
+    $stmt = $conn->prepare("INSERT INTO tasks (task_title, description, due_date, assigned_to) VALUES (?, ?, ?, ?)");
+    $stmt->bind_param("sssi", $title, $desc, $due, $uid);
+    $stmt->execute();
+    header("Location: dashboard.php");
+}
+$users = $conn->query("SELECT user_id, fullname FROM users");
+?>
 <!DOCTYPE html>
 <html>
-<head>
-    <title>Tasks</title>
-</head>
-<body>
-
-<h2>Add Task</h2>
-
-<form method="POST">
-
-<input type="text" name="task_title" placeholder="Task Title" required><br><br>
-
-<textarea name="description"></textarea><br><br>
-
-<input type="date" name="due_date"><br><br>
-
-<button type="submit" name="add_task">Add Task</button>
-
-</form>
-
-<hr>
-
-<h2>Task List</h2>
-
-<table border="1" cellpadding="10">
-
-<tr>
-    <th>ID</th>
-    <th>Task Title</th>
-    <th>Description</th>
-    <th>Status</th>
-    <th>Due Date</th>
-</tr>
-
-<?php
-
-$sql = "SELECT * FROM tasks";
-$result = mysqli_query($conn, $sql);
-
-while($row = mysqli_fetch_assoc($result)){
-
-?>
-
-<tr>
-
-<td><?php echo $row['task_id']; ?></td>
-
-<td><?php echo $row['task_title']; ?></td>
-
-<td><?php echo $row['description']; ?></td>
-
-<td><?php echo $row['status']; ?></td>
-
-<td><?php echo $row['due_date']; ?></td>
-
-</tr>
-
-<?php
-}
-?>
-
-</table>
-
+<head><link rel="stylesheet" href="style.css"><title>Add Task</title></head>
+<body class="auth-page">
+    <div class="auth-card">
+        <h3>New Task</h3>
+        <form method="POST">
+            <input type="text" name="title" placeholder="Title" required>
+            <textarea name="desc" placeholder="Details"></textarea>
+            <input type="date" name="due" required>
+            <select name="user_id">
+                <option value="">Assign Member</option>
+                <?php while($u = $users->fetch_assoc()): ?>
+                    <option value="<?php echo $u['user_id']; ?>"><?php echo $u['fullname']; ?></option>
+                <?php endwhile; ?>
+            </select>
+            <button type="submit" class="btn-primary">Create</button>
+        </form>
+    </div>
 </body>
 </html>

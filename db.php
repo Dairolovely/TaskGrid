@@ -1,14 +1,13 @@
 <?php
+$host = "localhost";
+$user = "root";
+$pass = ""; 
+$db   = "taskgrid";
 
-$conn = mysqli_connect(
-    "localhost",
-    "root",
-    "",
-    "taskgrid"
-);
+// Using $conn and MySQLi as requested by your teacher
+$conn = new mysqli($host, $user, $pass, $db);
 
-if(!$conn){
-    die("Connection Failed: " . mysqli_connect_error());
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
 }
-
 ?>
