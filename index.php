@@ -22,7 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 }
 ?>
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head><link rel="stylesheet" href="style.css"><title>TaskGrid | Login</title></head>
 <body class="auth-page">
@@ -37,4 +37,4 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <p>New here? <a href="register.php">Create account</a></p>
     </div>
 </body>
-</html> -->
+</html>
