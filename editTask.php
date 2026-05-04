@@ -28,7 +28,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <body class="auth-page">
     <div class="auth-card">
         <h3>Update Task Details</h3>
-        <!-- <form method="POST">
+        <form method="POST">
             <input type="text" name="title" value="<?php echo htmlspecialchars($task['task_title']); ?>" required>
             <select name="status">
                 <option <?php if($task['status']=='Pending') echo 'selected'; ?>>Pending</option>
@@ -39,4 +39,4 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         </form>
     </div>
 </body>
-</html> -->
+</html>
