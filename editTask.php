@@ -22,13 +22,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     exit();
 }
 ?>
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head><link rel="stylesheet" href="style.css"><title>Edit Task</title></head>
 <body class="auth-page">
     <div class="auth-card">
         <h3>Update Task Details</h3>
-        <form method="POST">
+        <!-- <form method="POST">
             <input type="text" name="title" value="<?php echo htmlspecialchars($task['task_title']); ?>" required>
             <select name="status">
                 <option <?php if($task['status']=='Pending') echo 'selected'; ?>>Pending</option>
