@@ -11,5 +11,5 @@ th, td { padding: 12px; border-bottom: 1px solid #eee; text-align: left; }
 input, select, textarea { width: 100%; padding: 10px; margin: 10px 0; border: 1px solid #ddd; }
 .btn-primary { background: var(--a); color: white; border: none; padding: 10px; width: 100%; cursor: pointer; }
 .status-Pending { color: #f39c12; font-weight: bold; }
-.status-Completed { color: #2ecc71; font-weight: bold; }
-.chart-container { width: 300px; margin: auto; }
+/* .status-Completed { color: #2ecc71; font-weight: bold; }
+.chart-container { width: 300px; margin: auto; } */

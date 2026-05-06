@@ -8,17 +8,17 @@ if (isset($_GET['delete'])) {
     header("Location: dashboard.php");
 }
 
-// if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-//     $title = $_POST['title'];
-//     $desc = $_POST['desc'];
-//     $due = $_POST['due'];
-//     $uid = $_POST['user_id'];
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $title = $_POST['title'];
+    $desc = $_POST['desc'];
+    $due = $_POST['due'];
+    $uid = $_POST['user_id'];
 
-//     $stmt = $conn->prepare("INSERT INTO tasks (task_title, description, due_date, assigned_to) VALUES (?, ?, ?, ?)");
-//     $stmt->bind_param("sssi", $title, $desc, $due, $uid);
-//     $stmt->execute();
-//     header("Location: dashboard.php");
-// }
+    $stmt = $conn->prepare("INSERT INTO tasks (task_title, description, due_date, assigned_to) VALUES (?, ?, ?, ?)");
+    $stmt->bind_param("sssi", $title, $desc, $due, $uid);
+    $stmt->execute();
+    header("Location: dashboard.php");
+}
 $users = $conn->query("SELECT user_id, fullname FROM users");
 ?>
 <!DOCTYPE html>
