@@ -14,3 +14,26 @@ if(isset($_POST['add_task'])){
 }
 ?>
 
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tasks</title>
+</head>
+<body>
+
+<h2>Add Task</h2>
+
+<form method="POST">
+
+<input type="text" name="task_title" placeholder="Task Title" required><br><br>
+
+<textarea name="description"></textarea><br><br>
+
+<input type="date" name="due_date"><br><br>
+
+<button type="submit" name="add_task">Add Task</button>
+
+</form>
+
+</body>
+</html>
