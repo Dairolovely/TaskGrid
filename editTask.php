@@ -1,4 +1,4 @@
-<!-- <?php
+<?php
 session_start();
 require 'db.php'; // This connects to $conn
 
@@ -21,7 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     header("Location: dashboard.php");
     exit();
 }
-?> -->
+?>
 <!-- <!DOCTYPE html>
 <html>
 <head><link rel="stylesheet" href="style.css"><title>Edit Task</title></head>
