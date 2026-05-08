@@ -18,7 +18,7 @@ $c_res = $conn->query("SELECT COUNT(*) as total FROM tasks WHERE status='Complet
 $c_count = $c_res->fetch_assoc()['total'];
 ?>
 
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html>
 <head>
     <link rel="stylesheet" href="style.css">
@@ -76,4 +76,4 @@ $c_count = $c_res->fetch_assoc()['total'];
         });
     </script>
 </body>
-</html>
+</html> -->
