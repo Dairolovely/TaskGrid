@@ -51,5 +51,14 @@ if(isset($_POST['add_task'])){
 
 <?php
 
+$sql = "SELECT * FROM tasks";
+$result = mysqli_query($conn, $sql);
+
+while($row = mysqli_fetch_assoc($result)){
+
+?>
+
+<tr>
+
 </body>
 </html>
