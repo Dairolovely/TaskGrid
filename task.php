@@ -35,5 +35,21 @@ if(isset($_POST['add_task'])){
 
 </form>
 
+<hr>
+
+<h2>Task List</h2>
+
+<table border="1" cellpadding="10">
+
+<tr>
+    <th>ID</th>
+    <th>Task Title</th>
+    <th>Description</th>
+    <th>Status</th>
+    <th>Due Date</th>
+</tr>
+
+<?php
+
 </body>
 </html>
