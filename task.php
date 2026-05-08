@@ -60,5 +60,23 @@ while($row = mysqli_fetch_assoc($result)){
 
 <tr>
 
+<td><?php echo $row['task_id']; ?></td>
+
+<td><?php echo $row['task_title']; ?></td>
+
+<td><?php echo $row['description']; ?></td>
+
+<td><?php echo $row['status']; ?></td>
+
+<td><?php echo $row['due_date']; ?></td>
+
+</tr>
+
+<?php
+}
+?>
+
+</table>
+
 </body>
 </html>
